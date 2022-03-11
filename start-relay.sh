@@ -20,10 +20,10 @@ else
       rtsp-simple-server &
       sleep 2
 
-      echo "Start relaying from $SOURCE_URL to rtsp://0.0.0.0:8554/$STREAM_NAME"
+      echo "Start relaying from $SOURCE_URL to rtsp://$HOST_IP:8554/$STREAM_NAME"
       while true; do
          set -x
-         ffmpeg $FFMPEG_INPUT_ARGS -i $SOURCE_URL $FFMPEG_OUTPUT_ARGS -f rtsp rtsp://127.0.0.1:8554/$STREAM_NAME
+         ffmpeg $FFMPEG_INPUT_ARGS -i $SOURCE_URL $FFMPEG_OUTPUT_ARGS -f rtsp rtsp://$HOST_IP:8554/$STREAM_NAME
          set +x
          echo "Reconnecting..."
          sleep 1
