@@ -4,7 +4,7 @@ RUN apk --update add git
 
 #RTSP SIMPLE SERVER
 WORKDIR /tmp
-RUN git clone https://github.com/aler9/rtsp-simple-server.git
+RUN git clone --branch v0.17.10 https://github.com/aler9/rtsp-simple-server.git
 WORKDIR /tmp/rtsp-simple-server
 
 RUN go mod download
